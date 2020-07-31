@@ -42,6 +42,7 @@ def tweet_list_view(request, *args, **kwargs):
 def tweet_create_view(request, *args, **kwargs):
     serializer = TweetCreateSerializer(data=request.data or None)
     if serializer.is_valid(raise_exception=True):
+        # print(serializer.data)
         serializer.save(user=request.user)
         return Response(serializer.data, status=201)
     return Response({}, status=400)

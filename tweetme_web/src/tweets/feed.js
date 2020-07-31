@@ -38,6 +38,7 @@ export function FeedList(props) {
        updatedFinalTweets.unshift(tweets)
        setTweets(updatedFinalTweets)
     }
+    
     const handleLoadNext = (event) => {
       event.preventDefault()
       if (nextUrl !== null) {
